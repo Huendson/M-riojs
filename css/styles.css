@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+.game-board {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    border-bottom: solid 20px rgb(60, 175, 36);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(142, 199, 252), rgb(125, 181, 228), rgb(74, 113, 170), rgb(39, 80, 133) ,rgb(11, 37, 110), rgb(3, 15, 46));
+    animation-name: fundo-animation;
+    animation-duration: 109s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    background-size: 500% 100%;
+}
+
+.pipe {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    bottom: 0;
+    right: 0;
+    animation: pipe-animation 1.4s infinite;
+    animation-timing-function: linear;
+}
+
+.mario {
+    position: absolute;
+    width: 9.5em;
+    margin-left: 6em;
+    bottom: 0;
+}
+
+.jumpMario {
+    animation: jump-mario-animation 1500ms;
+}
+
+.clouds {
+    position: absolute;
+    width: 30em;
+    margin-top: 6em;
+    animation: clouds-animation 10s infinite;
+    animation-timing-function: linear;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.7em;
+}
+
+.refresh {
+    position: absolute;
+    border: none;
+    background: none;
+    font-size: 4em;
+    color: rgb(251, 255, 9);
+    text-shadow:
+        -2px -2px 2px rgb(28, 156, 28),
+        -2px 2px 2px rgba(28, 156, 28),
+        2px -2px 2px rgb(28, 156, 28),
+        2px 1px 2px rgb(179, 40, 40);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////*/
+@keyframes fundo-animation {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+@keyframes pipe-animation {
+    0% {
+        right: -10%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes jump-mario-animation {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 6.5em;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    0% {
+        right: -35%;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
